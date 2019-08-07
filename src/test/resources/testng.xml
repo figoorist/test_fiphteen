@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Tests" verbose="5">
+  <test name="Test1">
+    <parameter name="title" value="Title23432432"/>
+    <parameter name="slug" value="Slug55756774"/>
+    <parameter name="textMarkdown" value="Text23432432"/>
+    <parameter name="text" value="Text55756774"/>
+    <classes>
+      <class name="ru.comp.tests.EntryTestClass"/>
+    </classes>
+  </test>  
+</suite>
