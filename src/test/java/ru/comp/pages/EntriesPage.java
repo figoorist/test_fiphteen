@@ -1,5 +1,6 @@
 package ru.comp.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -41,6 +42,7 @@ public class EntriesPage extends BasePage {
         this.coreElementXPath = "//h1[contains(text(), 'Выберите entry для изменения')]";
     }
 
+    @Step("Check if there is an entry we added")
     public boolean containsEntry(String title, String slug) {
         boolean isDisplayed = false;
         try {
@@ -51,10 +53,12 @@ public class EntriesPage extends BasePage {
         return isDisplayed;
     }
 
+    @Step("Get entries count")
     public int getEntriesCount(String title, String slug) {
         return wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(getEntryXPath(title, slug)))).size();
     }
 
+    @Step("Click check entry checkbox")
     private void checkFirstEntry(String title, String slug) {
         String entryCheckXPath = "/td/input[contains(@class, 'action-select')]";
         wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(getEntryXPath(title, slug) + entryCheckXPath))).get(0).click();
@@ -64,6 +68,7 @@ public class EntriesPage extends BasePage {
         getDriver().findElement(By.xpath("//select[@name='action']/option[@value='" + value + "']")).click();
     }
 
+    @Step("Delete entry we added and check it")
     public void deleteFirstEntry(String title, String slug) {
         int countAfter = getEntriesCount(title, slug);
         checkFirstEntry(title, slug);

@@ -1,5 +1,6 @@
 package ru.comp.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -25,6 +26,7 @@ public class HomePage extends BasePage {
         coreElementXPath = "//a[contains(text(),'Панель управления')]";
     }
 
+    @Step("Go to New entry page")
     public void goToNewEntryPage() {
         getNewEntryLink().click();
     }

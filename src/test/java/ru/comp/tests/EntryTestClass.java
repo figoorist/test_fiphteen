@@ -1,5 +1,6 @@
 package ru.comp.tests;
 
+import io.qameta.allure.Description;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
@@ -29,6 +30,7 @@ public class EntryTestClass extends AutomationBaseClass {
     }
 
     @Test
+    @Description(value = "Entry adding and deleting verifying")
     @Parameters({"title", "slug", "textMarkdown", "text"})
     public void testEntryAdding(String title, String slug, String textMarkdown, String text) {
         homePage.goToNewEntryPage();

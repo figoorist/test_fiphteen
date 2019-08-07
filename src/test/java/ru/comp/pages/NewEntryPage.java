@@ -1,5 +1,6 @@
 package ru.comp.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -49,6 +50,7 @@ public class NewEntryPage extends BasePage {
         this.coreElementXPath = "//h1[contains(text(), 'Добавить entry')]";
     }
 
+    @Step("Fill New entry form and click Submit button")
     public void addEntry(String title, String slug, String textMarkdown, String text) {
         getTxtTitleInput().sendKeys(title);
         getTxtSlugInput().clear();

@@ -1,5 +1,6 @@
 package ru.comp.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -31,6 +32,7 @@ public abstract class BasePage extends ru.comp.pages.AutomationBaseClass {
         wait = new WebDriverWait(driver, OPTIMIZED_TIMEOUT);
     }
 
+    @Step("Check the page has loaded")
     public void IsPresentedCheck() {
         try {
             WaitForElementToAppear(getDriver().findElement(By.xpath(coreElementXPath)));

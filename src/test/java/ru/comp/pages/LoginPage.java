@@ -1,5 +1,6 @@
 package ru.comp.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -38,10 +39,12 @@ public class LoginPage extends BasePage {
         this.coreElementXPath = "//input[@type='submit']";
     }
 
+    @Step("Go to Login page")
     public void goToBaseUrl() {
         getDriver().get(baseUrl);
     }
 
+    @Step("Account login")
     public void login(String login, String password) {
         getTxtLoginInput().sendKeys(login);
         getTxtPasswordInput().sendKeys(password);
